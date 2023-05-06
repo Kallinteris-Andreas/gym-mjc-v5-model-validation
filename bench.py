@@ -14,7 +14,7 @@ TOTAL_TIMESTEPS = 200_000
 EVAL_SEED = 1234
 
 
-for run in range(0, 1):
+for run in range(4, RUNS):
     #env = gym.wrappers.TimeLimit(walker2d_v4.Walker2dEnv(), max_episode_steps=1000)
     #eval_env = gym.wrappers.TimeLimit(walker2d_v4.Walker2dEnv(), max_episode_steps=1000)
     #env = gym.wrappers.TimeLimit(walker2d_v4_fixed.Walker2dEnv(), max_episode_steps=1000)
@@ -28,17 +28,18 @@ for run in range(0, 1):
     #env = gym.wrappers.TimeLimit(hopper_v5_t2.HopperEnv(), max_episode_steps=1000)
     #eval_env = gym.wrappers.TimeLimit(hopper_v5_t2.HopperEnv(), max_episode_steps=1000)
 
-    xml_file = "/home/master-andreas/test/hopper.xml"
-    xml_file = "/home/master-andreas/test/hopper_new.xml"
-    xml_file = "/home/master-andreas/test/hopper_new_gen.xml"
-    #xml_file = "/home/master-andreas/test/walker2d.xml"
-    #xml_file = "/home/master-andreas/test/walker2d_fixed.xml"
-    #xml_file = "/home/master-andreas/test/walker2d_new.xml"
-    env = gym.wrappers.TimeLimit(hopper.HopperEnv(xml_file=xml_file), max_episode_steps=1000)
-    eval_env = gym.wrappers.TimeLimit(hopper.HopperEnv(xml_file=xml_file), max_episode_steps=1000)
-    #env = gym.wrappers.TimeLimit(walker2d.Walker2dEnv(xml_file=xml_file), max_episode_steps=1000)
-    #eval_env = gym.wrappers.TimeLimit(walker2d.Walker2dEnv(xml_file=xml_file), max_episode_steps=1000)
-    #eval_env.reset(seed=run)
+    #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper.xml"
+    #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper_new.xml"
+    #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper_new_gen.xml"
+    #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper_saran_t_trans.xml"
+    xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d.xml"
+    #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_fixed.xml"
+    #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_new.xml"
+
+    #env = gym.wrappers.TimeLimit(hopper.HopperEnv(xml_file=xml_file), max_episode_steps=1000)
+    #eval_env = gym.wrappers.TimeLimit(hopper.HopperEnv(xml_file=xml_file), max_episode_steps=1000)
+    env = gym.wrappers.TimeLimit(walker2d.Walker2dEnv(xml_file=xml_file), max_episode_steps=1000)
+    eval_env = gym.wrappers.TimeLimit(walker2d.Walker2dEnv(xml_file=xml_file), max_episode_steps=1000)
 
     #eval_path = 'results/walker2d_v4/run_' + str(run)
     #eval_path = 'results/walker2d_v4_fixed/run_' + str(run)
@@ -47,7 +48,8 @@ for run in range(0, 1):
     #eval_path = 'results/hopper_v5_gen/run_' + str(run)
     #eval_path = 'results/hopper_v5_t2/run_' + str(run)
     #eval_path = 'results/hopper_v5_t3/run_' + str(run)
-    eval_path = 'results/' + xml_file[26:-4] + '/run_' + str(run)
+    eval_path = 'results/' + xml_file[49:-4] + '/run_' + str(run)
+    #breakpoint()
     #eval_path = 'results/temp/run_' + str(run)
 
     eval_callback = EvalCallback(eval_env, seed=EVAL_SEED, best_model_save_path=eval_path, log_path=eval_path, n_eval_episodes=10, eval_freq=1000, deterministic=True, render=False, verbose=True)
