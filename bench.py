@@ -14,7 +14,7 @@ TOTAL_TIMESTEPS = 200_000
 EVAL_SEED = 1234
 
 
-for run in range(4, RUNS):
+for run in range(5, RUNS):
     #env = gym.wrappers.TimeLimit(walker2d_v4.Walker2dEnv(), max_episode_steps=1000)
     #eval_env = gym.wrappers.TimeLimit(walker2d_v4.Walker2dEnv(), max_episode_steps=1000)
     #env = gym.wrappers.TimeLimit(walker2d_v4_fixed.Walker2dEnv(), max_episode_steps=1000)
@@ -28,18 +28,19 @@ for run in range(4, RUNS):
     #env = gym.wrappers.TimeLimit(hopper_v5_t2.HopperEnv(), max_episode_steps=1000)
     #eval_env = gym.wrappers.TimeLimit(hopper_v5_t2.HopperEnv(), max_episode_steps=1000)
 
-    #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper.xml"
-    #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper_new.xml"
-    #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper_new_gen.xml"
+    xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper.xml"
+    xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper_new.xml"
+    xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper_new_gen.xml"
     #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper_saran_t_trans.xml"
-    xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d.xml"
+    xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/hopper_saran_t_trans2.xml"
+    #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d.xml"
     #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_fixed.xml"
     #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_new.xml"
 
-    #env = gym.wrappers.TimeLimit(hopper.HopperEnv(xml_file=xml_file), max_episode_steps=1000)
-    #eval_env = gym.wrappers.TimeLimit(hopper.HopperEnv(xml_file=xml_file), max_episode_steps=1000)
-    env = gym.wrappers.TimeLimit(walker2d.Walker2dEnv(xml_file=xml_file), max_episode_steps=1000)
-    eval_env = gym.wrappers.TimeLimit(walker2d.Walker2dEnv(xml_file=xml_file), max_episode_steps=1000)
+    env = gym.wrappers.TimeLimit(hopper.HopperEnv(xml_file=xml_file), max_episode_steps=1000)
+    eval_env = gym.wrappers.TimeLimit(hopper.HopperEnv(xml_file=xml_file), max_episode_steps=1000)
+    #env = gym.wrappers.TimeLimit(walker2d.Walker2dEnv(xml_file=xml_file), max_episode_steps=1000)
+    #eval_env = gym.wrappers.TimeLimit(walker2d.Walker2dEnv(xml_file=xml_file), max_episode_steps=1000)
 
     #eval_path = 'results/walker2d_v4/run_' + str(run)
     #eval_path = 'results/walker2d_v4_fixed/run_' + str(run)
