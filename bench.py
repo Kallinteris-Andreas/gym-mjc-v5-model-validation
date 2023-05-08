@@ -14,7 +14,7 @@ TOTAL_TIMESTEPS = 200_000
 EVAL_SEED = 1234
 
 
-for run in range(5, RUNS):
+for run in range(0, RUNS):
     #env = gym.wrappers.TimeLimit(walker2d_v4.Walker2dEnv(), max_episode_steps=1000)
     #eval_env = gym.wrappers.TimeLimit(walker2d_v4.Walker2dEnv(), max_episode_steps=1000)
     #env = gym.wrappers.TimeLimit(walker2d_v4_fixed.Walker2dEnv(), max_episode_steps=1000)
