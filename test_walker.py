@@ -7,7 +7,7 @@ import numpy as np
 from icecream import ic
 
 xml_file_global = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d.xml"
-xml_file_local = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_v5.xml"
+xml_file_local = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_ported.xml"
 global_env = walker2d.Walker2dEnv(exclude_current_positions_from_observation=False, xml_file=xml_file_global, render_mode=None)
 local_env = walker2d.Walker2dEnv(exclude_current_positions_from_observation=False, xml_file=xml_file_local, render_mode=None)
 
