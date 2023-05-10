@@ -37,6 +37,10 @@ for run in range(0, RUNS):
     #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_fixed.xml"
     #xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_new.xml"
     xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_v5.xml"
+    xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_v5_feet_1.xml"
+    xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_v5_feet_09.xml"
+    xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_v5_feet_old.xml"
+    xml_file = "/home/master-andreas/gym-mjc-v5-model-validation/walker2d_v5_feet_19.xml"
 
     #env = gym.wrappers.TimeLimit(hopper.HopperEnv(xml_file=xml_file), max_episode_steps=1000)
     #eval_env = gym.wrappers.TimeLimit(hopper.HopperEnv(xml_file=xml_file), max_episode_steps=1000)
